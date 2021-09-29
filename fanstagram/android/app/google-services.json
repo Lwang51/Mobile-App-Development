@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428776566042",
+    "project_id": "fanstagram-88d63",
+    "storage_bucket": "fanstagram-88d63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428776566042:android:c4d03d174976f6546d10a3",
+        "android_client_info": {
+          "package_name": "com.MAD.fanstagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428776566042-v94hne1dd1hsghf5gls57ekk9tuamt2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB02soYGimefqEeQlgec_OY_sKG0NdyYAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428776566042-v94hne1dd1hsghf5gls57ekk9tuamt2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
