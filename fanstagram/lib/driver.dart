@@ -22,13 +22,11 @@ class AppDriver extends StatelessWidget {
           } else if (!snapshot.hasData) {
             return const ErrorPage();
           } else {
-            if (snapshot.hasData) {
-              var userDocument = snapshot.data;
-              if ((userDocument as dynamic)["isAdmin"] == true) {
-                return AdminHomePage();
-              } else {
-                return HomePage();
-              }
+            var userDocument = snapshot.data;
+            if ((userDocument as dynamic)["isAdmin"] == null) {
+              return HomePage();
+            } else if ((userDocument as dynamic)["isAdmin"] == true) {
+              return AdminHomePage();
             }
           }
           return const ErrorPage();
