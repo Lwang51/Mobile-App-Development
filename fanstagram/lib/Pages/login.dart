@@ -1,3 +1,5 @@
+import 'package:fanstagram/GoogleLogin/authentication.dart';
+import 'package:fanstagram/GoogleLogin/sign_in.dart';
 import 'package:fanstagram/Pages/register.dart';
 import 'package:fanstagram/UI/loading.dart';
 import 'package:fanstagram/driver.dart';
@@ -100,30 +102,58 @@ class _LoginState extends State<LoginPage> {
     );
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _auth.currentUser != null
-                ? Text(_auth.currentUser!.uid)
-                : _loading
-                    ? const LoadingPage()
-                    : Form(
-                        key: _formKey,
-                        child: Column(
-                          children: <Widget>[
-                            // Add TextFormFields and ElevatedButton here.
-                            emailInput,
-                            passwordInput,
-                            submitButton,
-                            registerButton
-                          ],
-                        ),
-                      )
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 16.0,
+            right: 16.0,
+            bottom: 20.0,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    _auth.currentUser != null
+                        ? Text(_auth.currentUser!.uid)
+                        : _loading
+                            ? const LoadingPage()
+                            : Form(
+                                key: _formKey,
+                                child: Column(
+                                  children: <Widget>[
+                                    // Add TextFormFields and ElevatedButton here.
+                                    emailInput,
+                                    passwordInput,
+                                    submitButton,
+                                    registerButton
+                                  ],
+                                ),
+                              )
+                  ],
+                ),
+              ),
+              FutureBuilder(
+                future: Authentication.initializeFirebase(context: context),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return const Text('Error initializing Firebase');
+                  } else if (snapshot.connectionState == ConnectionState.done) {
+                    return const GoogleSignInButton();
+                  }
+                  return Container(
+                      child: const Center(child: CircularProgressIndicator()),
+                      color: Colors.white);
+                },
+              ),
+            ],
+          ),
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -154,4 +184,42 @@ class _LoginState extends State<LoginPage> {
       _loading = false;
     });
   }
+
+  /* https://blog.codemagic.io/firebase-authentication-google-sign-in-using-flutter/
+  static Future<User?> signInWithGoogle({required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    final GoogleSignInAccount? googleSignInAccount =
+        await googleSignIn.signIn();
+
+    if (googleSignInAccount != null) {
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleSignInAuthentication.accessToken,
+        idToken: googleSignInAuthentication.idToken,
+      );
+
+      try {
+        final UserCredential userCredential =
+            await auth.signInWithCredential(credential);
+
+        user = userCredential.user;
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'account-exists-with-different-credential') {
+          // handle the error here
+        } else if (e.code == 'invalid-credential') {
+          // handle the error here
+        }
+      } catch (e) {
+        // handle the error here
+      }
+    }
+
+    return user;
+  } */
 }

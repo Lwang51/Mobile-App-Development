@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fanstagram/Pages/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -199,6 +200,9 @@ class _RegisterPageState extends State<RegisterPage> {
             "first_name": _firstnameController.text,
             "last_name": _lastnameController.text,
             "phone": _phonenumberController.text,
+            "registrationDateTime":
+                DateFormat("yyyy-MM-dd hh:mm:ss").format(DateTime.now()),
+            "UserRole": "Customer",
           })
           .then((value) => (null))
           .onError((error, stackTrace) => (null));
@@ -215,6 +219,6 @@ class _RegisterPageState extends State<RegisterPage> {
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text("Registration Completed")));
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+        MaterialPageRoute(builder: (BuildContext context) => const HomePage()));
   }
 }

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "428776566042-m6dq31c9i0ppfes2c7j40jovbqoiqop0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.MAD.fanstagram",
+            "certificate_hash": "b1ad026609dbbea5093cba0324741647c724be24"
+          }
+        },
+        {
           "client_id": "428776566042-v94hne1dd1hsghf5gls57ekk9tuamt2o.apps.googleusercontent.com",
           "client_type": 3
         }
