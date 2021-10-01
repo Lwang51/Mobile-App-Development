@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>428776566042-bdhgocamk3371uich581jfcp7d1ht3e6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.428776566042-bdhgocamk3371uich581jfcp7d1ht3e6</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>428776566042-m6dq31c9i0ppfes2c7j40jovbqoiqop0.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBorx6er-WUrMB-bbMe5-RmC_Evgka0cOg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>428776566042</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.MAD.fanstagram</string>
+	<key>PROJECT_ID</key>
+	<string>fanstagram-88d63</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fanstagram-88d63.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:428776566042:ios:a2b805ff58aa1a376d10a3</string>
+</dict>
+</plist>
