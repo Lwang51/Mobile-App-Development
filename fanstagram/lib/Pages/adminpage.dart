@@ -26,19 +26,13 @@ class _AdminPage extends State<AdminHomePage> {
   String message = "";
 
   @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        const Padding(padding: EdgeInsets.only(left: 31)),
         Align(
           alignment: Alignment.center,
-          child: StreamBuilder<QuerySnapshot>(
+          child: Scaffold(
+              body: StreamBuilder<QuerySnapshot>(
             stream: _messageStream,
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -61,7 +55,7 @@ class _AdminPage extends State<AdminHomePage> {
                 }).toList(),
               );
             },
-          ),
+          )),
         ),
         Align(
             alignment: Alignment.bottomRight,
