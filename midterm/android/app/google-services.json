@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309305051917",
+    "project_id": "mad-midterm",
+    "storage_bucket": "mad-midterm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309305051917:android:81d50f7069efa9c87f7e44",
+        "android_client_info": {
+          "package_name": "com.MAD.midterm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309305051917-a6j82d6ka6krncoeap6ajru1ug5abd8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF5f-mduLFuPOUnQ6at1JLfh4N6QwO6ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309305051917-a6j82d6ka6krncoeap6ajru1ug5abd8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
